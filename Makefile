@@ -1,14 +1,17 @@
 CC=gcc
-CFLAGS=-Wall -Wextra -Iinclude
-SRC_DIR=src
-OBJ_DIR=obj
-BIN_DIR=bin
+
+CFLAGS=-Wall -Wextra -Itask6/include
+
+SRC_DIR=task6/src
+OBJ_DIR=task6/obj
+BIN_DIR=task6/bin
+
 
 SRCS=$(wildcard $(SRC_DIR)/*.c)
 
 OBJS=$(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
-TARGET=$(BIN_DIR)/solution
 
+TARGET=$(BIN_DIR)/solution.exe
 
 all: $(BIN_DIR) $(OBJ_DIR) $(TARGET)
 
