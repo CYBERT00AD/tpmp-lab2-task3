@@ -14,3 +14,4 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build with Make
         run: make
+        working-directory: ./task6
