@@ -1,25 +1,36 @@
+
 #ifndef TASKS_H
 #define TASKS_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-typedef struct {
+struct PERSON {
     char Name[50];
-    char FAC[20];
-    char GROUP[10];
-    int year, month, day;
-} PERSON;
-
-struct PhoneBook {
-    char surname[50];
-    char number[20];
+    char FAC[50];
+    char GROUP[20];
+    struct {
+        int year;
+        int month;
+        int day;
+    } DATE;
 };
 
-int is_leap(int y);
+struct PhoneOwner {
+    char surname[30];
+    char name[30];
+    char patronymic[30];
+    char postal_code[10];
+    char country[30];
+    char region[30];
+    char district[30];
+    char city[30];
+    char street[30];
+    char house[10];
+    char apartment[10];
+    char phone[20];
+};
+
+int is_leap(int year);
 long count_days(int day, int month, int year);
-int compare_students(const void *a, const void *b);
-void filter_phones(struct PhoneBook *entries, int count);
+void print_persons_sorted(struct PERSON vuz[], int n);
+void filter_phones(struct PhoneOwner owners[], int n);
 
 #endif
